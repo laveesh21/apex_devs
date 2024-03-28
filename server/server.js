@@ -10,9 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: 'https://apexdevs-club.onrender.com/',  // Replace with your frontend's domain
+  origin: 'https://apexdevs-club.onrender.com',  // Replace with your frontend's actual domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization']}));
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 
 app.use(bodyParser.json());
