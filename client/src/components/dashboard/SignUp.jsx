@@ -23,7 +23,7 @@ function SignUp() {
     }
 
     try {
-      const response = await axios.post(`${domain}/register`, {
+      const response = await axios.post(`${domain}/user/register`, {
         username,
         email,
         password, // Ensure this is stored securely on the backend (e.g., hashed)

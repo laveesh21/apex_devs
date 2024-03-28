@@ -13,10 +13,11 @@ function LogIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${domain}login`, {
+      const response = await axios.post(`${domain}/user/login`, {
         username,
         password,
       });
+      console.log("CHECK AUTH")
 
       if (response.status === 200) {
         // Successful login

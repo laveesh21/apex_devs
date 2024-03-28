@@ -7,7 +7,7 @@ function UploadProject(props) {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [imageUrl, setImageUrl] = useState('');
 
-  // PROJECT
+  // PROJECT state
   const [project, setProject] = useState({
     title: "",
     description: "",
@@ -41,7 +41,7 @@ function UploadProject(props) {
 
     // Submit the updated project data
     await axios
-      .post(`${domain}/upload`, updatedProject)
+      .post(`${domain}/project/upload`, updatedProject)
       .then((response) => {
         console.log("Project added successfully:", response.data);
       })

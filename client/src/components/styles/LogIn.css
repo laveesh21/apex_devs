@@ -1,11 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Quicksand&family=Raleway:wght@200&display=swap');
-/* 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box  ;
-    font-family: 'Poppins', sans-serif;
-} */
 
 .login-body {
     min-width: 90%;
@@ -24,7 +17,7 @@
     padding: 30px 40px;
     border-radius: 10px;
     background: transparent;
-    border: 3px solid rgb(255, 255, 255);
+    border: 3px solid rgb(35, 35, 35);
     backdrop-filter: blur(20px);
     /* box-shadow: 0 0 15px #00BF62; */
 }
@@ -54,11 +47,11 @@
 .inputClass{
     border: 3px solid rgba(177, 177, 177, 0.2);
     border-radius: 50px;
-    color: white;
+    color: rgb(39, 39, 39);
 }
 
 .login-form input::placeholder{
-    color: rgba(255, 255, 255, 0.589);
+    color: rgba(14, 14, 14, 0.589);
 } 
 
 .login-form i{
@@ -77,7 +70,7 @@
     display: flex;
     justify-content: space-between; 
     margin: -15px 0 15px; 
-    color: white;
+    color: rgb(65, 65, 65);
 }
 .remember-forgot label input[type="checkbox"]{
     accent-color: #00BF62;

@@ -23,6 +23,7 @@ function ContactCard() {
                             <input type="email" name="email" id="emailDiv" placeholder="Email" required />
                             <textarea name="Message" id="messageDiv" rows="6" placeholder="Your Message"></textarea>
                             <button className="btn" type="submit">Submit</button>
+                            <p>Hello  </p>
                         </form>
                     </div>
                 </div>
