@@ -26,21 +26,21 @@ It just makes it easy for developers to stay in touch with each other and get a 
 
 ## ApexDevs Netlify Link
 
-Link: https://main--apexdevs.netlify.app
+Link: [Netlify - ApexDevs](https://main--apexdevs.netlify.app)
 
 ## ApexDes Render Link
 
-Link: https://apexdevs-club.onrender.com
+Link: [Render - ApexDevs](https://apexdevs-club.onrender.com)
 
 ## Figma Design
-Here is link for figma design: https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1
+Here is link for figma design: [Figma](https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1)
 <p align="center">
   <img src="client/src/assets/FigmaQR.png" height="150" width="150">
 </p>
 
 
 ## API Documentation
-Link for API documentation: https://documenter.getpostman.com/view/32332304/2s9YymHQJc
+Link for API documentation: [Postman API](https://documenter.getpostman.com/view/32332304/2s9YymHQJc)
 <p align="center">
   <img src="client/src/assets/ApiOR.png" height="150" width="150">
 </p>
