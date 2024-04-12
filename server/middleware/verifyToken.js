@@ -3,13 +3,13 @@ import jwt from "jsonwebtoken";
 const verifyToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
 
-  console.log(authHeader)
+  console.log(authHeader);
 
   if (!authHeader) {
     res.status(404).json({ message: "No Token Provided" });
   }
 
-  const token = authHeader.split(' ')[1];
+  const token = authHeader.split(" ")[1];
 
   jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
     if (err) {
@@ -23,7 +23,7 @@ const verifyToken = (req, res, next) => {
       }
     }
     req.user = decoded;
-    console.log(req.user)
+    console.log(req.user);
     next();
   });
 };

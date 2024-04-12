@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Project from "../models/project.model.js"
+import Project from "../models/project.model.js";
 import verifyToken from "../middleware/verifyToken.js";
 
 const router = Router();
@@ -15,13 +15,13 @@ router.get(`/`, async (req, res) => {
   }
 });
 
-// GET REQUEST FOR A SINGLE PROJECT 
+// GET REQUEST FOR A SINGLE PROJECT
 router.get(`/:projectId`, (req, res) => {
   const projectId = req.params.projectId;
   Project.findOne({ projectId })
     .then((data) => {
       if (data) {
-        res.status(404).json({ error: "Project Does Not Exist" }); 
+        res.status(404).json({ error: "Project Does Not Exist" });
       }
       res.json(data);
     })
@@ -31,10 +31,11 @@ router.get(`/:projectId`, (req, res) => {
 });
 
 //  POST REQUEST : PROJECT UPLOAD
-router.post(`/upload`, verifyToken , async (req, res) => {
+router.post(`/upload`, verifyToken, async (req, res) => {
   try {
     const newProject = new Project(req.body);
     newProject.projectId = "PROJECT" + Date.now();
+    newProject.developer = req.user.id;
     const savedProject = await newProject.save();
     res.status(200).json(savedProject);
   } catch (error) {
@@ -42,6 +43,5 @@ router.post(`/upload`, verifyToken , async (req, res) => {
     res.status(500).json({ error: "NODEJS => Internal server error" });
   }
 });
-
 
 export default router;

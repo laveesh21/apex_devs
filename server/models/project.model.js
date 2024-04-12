@@ -55,10 +55,10 @@ const projectSchema = new Schema({
       },
     ],
   },
-  developerName: {
+  developer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    // required: true,
+    required: true,
   },
 }, {timestamps: true});
 
