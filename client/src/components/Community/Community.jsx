@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/Community.css'
-import ThreadCard from '../microComponent/ThreadCard'
+import './Community.css'
+import ThreadCard from './ThreadCard'
 
 function Community() {
   return (

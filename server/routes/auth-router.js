@@ -1,13 +1,13 @@
 import {Router} from "express";
 import jwt from 'jsonwebtoken';
-import ApexUserModel from "../models/userData.js";
+import User from "../models/user.model.js"
 
 const router = Router();
 
 // POST REQUEST : SIGN UP
 router.post(`/register`, async(req, res)=>{
   try{
-  const newApexUser = new ApexUserModel(req.body);
+  const newApexUser = new User(req.body);
   newApexUser.userId = "APEX" + Date.now();
   const savedApexUser = await newApexUser.save();
   res.status(200).json(savedApexUser);
@@ -26,13 +26,14 @@ router.post(`/login`, async(req, res)=>{
 
     console.log("CHECK LOGIN 2")
 
-    const user = await ApexUserModel.findOne({username, password})
+    const user = await User.findOne({username, password})
     if(!user){
       return res.status(401).json({error: "INVALID CREDENTIALS"})
     }
 
     const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET_KEY);
-    res.status(200).json({ token });
+    // res.status(200).json({ token });
+    res.status(200).redirect('/')
 
   }catch(error){
     console.log("ERROR: ", error);

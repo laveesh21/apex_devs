@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ThreadCard.css";
+import "./ThreadCard.css";
 import Image from '../../assets/images.png'
 
 function ThreadCard(title, desc) {

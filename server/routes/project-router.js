@@ -1,12 +1,12 @@
 import { Router } from "express";
-import ProjectModel from "../models/projectCardData.js";
+import Project from "../models/project.model.js"
 
 const router = Router();
 
-// GET REQUEST FOR PROJECT
+// GET REQUEST : FOR PROJECT
 router.get(`/`, async (req, res) => {
   try {
-    const projects = await ProjectModel.find({});
+    const projects = await Project.find({});
     res.status(201).json(projects);
   } catch (error) {
     console.error("Error fetching projects:", error);
@@ -17,7 +17,7 @@ router.get(`/`, async (req, res) => {
 //  POST REQUEST : PROJECT UPLOAD
 router.post(`/upload`, async (req, res) => {
   try {
-    const newProject = new ProjectModel(req.body);
+    const newProject = new Project(req.body);
     newProject.projectId = "PROJECT" + Date.now();
     const savedProject = await newProject.save();
     res.status(200).json(savedProject);
@@ -30,7 +30,7 @@ router.post(`/upload`, async (req, res) => {
 // GET REQUEST FOR A SINGLE PROJECT 
 router.get(`/:projectId`, (req, res) => {
   const projectId = req.params.projectId;
-  ProjectModel.findOne({ projectId })
+  Project.findOne({ projectId })
     .then((projectData) => {
       if (projectData) {
         res.json(projectData);

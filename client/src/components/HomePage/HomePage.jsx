@@ -1,9 +1,9 @@
-import "../styles/HomePage.css";
+import "./HomePage.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SuperProjectCard from "../microComponent/SuperProjectCard";
-import Sidebar from "../microComponent/Sidebar"
+import SuperProjectCard from "./SuperProjectCard";
+// import Sidebar from "../microComponent/Sidebar"
 
 
 const homeCategory = "Projects";
@@ -33,7 +33,7 @@ function HomePage() {
     <div>
       <div className="super-container">
         <div className="sidebar-container">
-        <Sidebar/>
+        {/* <Sidebar/> */}
         </div>
         {/* -----------------BODY--------------- */}
         <div className="home-body">

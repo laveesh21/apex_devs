@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import axios for making API requests
 import { useNavigate } from 'react-router-dom';
-import '../styles/SignUp.css'
+import './SignUp.css'
 
 function SignUp() {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [fullname, setFullname] = useState("")
   const [password, setPassword] = useState('');
   const [agreement, setAgreement] = useState(false);
   const navigate = useNavigate();
 
   
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
-    // Validate input fields
-    if (!username || !email || !password || agreement!=true) {
-      // Display an error message to the user
+    if (!fullname || !username || !email || !password || agreement!=true) {
       alert('Please fill in all fields and agree to the terms.');
       return;
     }
@@ -26,7 +25,8 @@ function SignUp() {
       const response = await axios.post(`${domain}/user/register`, {
         username,
         email,
-        password, // Ensure this is stored securely on the backend (e.g., hashed)
+        password,
+        fullname,
       });
 
       console.log('Signup successful:', response.data);
@@ -51,6 +51,18 @@ function SignUp() {
               name="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="signup-form">
+            <label htmlFor="fullname">FullName:</label>
+            <input
+              type="text"
+              className="signup-input"
+              name="fullname"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
               required
             />
           </div>

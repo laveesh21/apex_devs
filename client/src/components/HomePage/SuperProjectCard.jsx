@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/SuperProjectCard.css";
+import "./SuperProjectCard.css";
 import Images from "../../assets/images.png";
 
 function SuperProjectCard({title, description, imageurl}) {

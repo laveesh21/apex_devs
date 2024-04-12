@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/Profile.css'
-import AchivementTab from '../microComponent/AchivementTab'
+import './Profile.css'
+import AchivementTab from './AchivementTab'
 import profileImage from "../../assets/images.png"
 import { useNavigate } from 'react-router-dom'
 

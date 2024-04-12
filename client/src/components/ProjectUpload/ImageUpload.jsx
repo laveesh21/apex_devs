@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import '../styles/ImageUpload.css'
+import './ImageUpload.css'
 
 
 function CloudinaryImage(props) {
 
-  const cloudinaryLink = import.meta.env.CLOUDINARY_LINK;
+  // const cloudinaryLink = import.meta.env.CLOUDINARY_LINK;
+  const cloudinaryLink = "https://api.cloudinary.com/v1_1/djkjt3zgy/image/upload"
 
 
   const uploadImage = async (file) => {
@@ -17,6 +18,7 @@ function CloudinaryImage(props) {
         method: 'POST',
         body: formData,
       });
+      console.log("IMAGE CHECK")
 
       const data = await response.json();
       props.setImageUrl(data.secure_url); 

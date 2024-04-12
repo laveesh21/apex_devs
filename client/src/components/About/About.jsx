@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import '../styles/About.css'
+import './About.css'
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png'
-import ContactCard from '../microComponent/ContactCard'
+import ContactCard from '../About/ContactCard.jsx'
 
 function About() {
 
@@ -31,7 +31,7 @@ function About() {
 
       {/* ABOUT */}
       <div className='about-text text'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptas id ex unde magni, sit, vero culpa officiis, soluta excepturi illum. Saepe incidunt asperiores ipsa quaerat placeat expedita, dicta eligendi!
+      ApexDevs is a community, which makes it easy for developers to reach out other develops and can get help from each other by understaning their projects in an easy way out by looking at images and with compact description. Devs can test out projects from their repos and review on it and can also give suggestion.
       </div>
 
       {/* lINE bREAK */}

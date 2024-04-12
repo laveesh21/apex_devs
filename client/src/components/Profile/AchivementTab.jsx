@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/AchivementTab.css'
+import './AchivementTab.css'
 import Star from '../../assets/star.png'
 
 function AchivementTab() {

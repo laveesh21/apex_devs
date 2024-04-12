@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegUserCircle } from "react-icons/fa";
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png';
-import "../styles/Navbar.css";
+import "./Navbar.css";
 
 // const isAuthenticated = localStorage.getItem('isAuthenticated');
 

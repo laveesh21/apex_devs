@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './components/dashboard/Navbar';
-import HomePage from './components/dashboard/HomePage';
-import Community from './components/dashboard/Community';
-import About from './components/dashboard/About';
-import Profile from './components/dashboard/Profile'
-import LogIn from './components/dashboard/LogIn';
-import SignUp from './components/dashboard/SignUp';
-import Project from './components/dashboard/Project';
-import UploadProject from './components/microComponent/UploadProject';
+import LogIn from './components/Authentication/LogIn';
+import SignUp from './components/Authentication/SignUp';
+import Navbar from './components/NavBar/Navbar';
+import HomePage from './components/HomePage/HomePage';
+import Community from './components/Community/Community';
+import About from './components/About/About';
+import Profile from './components/Profile/Profile'
+import Project from './components/Project/Project';
+import UploadProject from './components/ProjectUpload/UploadProject';
 
 
 function App() {

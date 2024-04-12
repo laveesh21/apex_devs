@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/UploadProject.css";
+import "./UploadProject.css";
 import CloudinaryImage from "./ImageUpload";
 
 function UploadProject(props) {

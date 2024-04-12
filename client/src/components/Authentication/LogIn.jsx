@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/LogIn.css";
+import "./LogIn.css";
 
 function LogIn() {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
@@ -20,6 +20,7 @@ function LogIn() {
       console.log("CHECK AUTH")
 
       if (response.status === 200) {
+
         // Successful login
         const token = response.data.token;
         localStorage.setItem("token", token);
@@ -29,11 +30,14 @@ function LogIn() {
         // Decode and log token
         // const decodedToken = jwt.decode(token);
         // console.log("Decoded Token:", decodedToken);
+        
         navigate("/");
 
       } else {
+        
         setError(response.data.message || "Authentication failed");
         localStorage.setItem("isAuthenticated", false);
+
       }
     } catch (error) {
       console.error("Error: ", error);

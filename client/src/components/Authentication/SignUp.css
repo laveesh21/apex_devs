@@ -1,95 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Quicksand&family=Raleway:wght@200&display=swap');
 
-.login-body {
-    min-width: 90%;
+.signup-body {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    /* background: url(img08.jpg) no-repeat; */
     color: white;
     background-size: cover;
     background-position: center;
-    /* background: url(img08.jpg) no-repeat; */
 }
 
-.login-container{
+.signup-container {
     width: 420px;
-    padding: 30px 40px;
+    padding: 30px 40px 40px 40px;
     border-radius: 10px;
     background: transparent;
-    border: 3px solid rgb(35, 35, 35);
+    border: 2px solid rgb(77, 77, 77);
     backdrop-filter: blur(20px);
-    /* box-shadow: 0 0 15px #00BF62; */
 }
 
-.login-container h1{
+.signup-container h1 {
     text-align: center;
     font-size: 36px;
 }
 
-.login-form{
+
+/* ------------INPUT FIELDS---------- */
+.signup-form{
     position: relative;
     width: 100%;
     height: 50px;
-    margin: 25px 0px;
+    margin: 40px 0px;
 }
 
-.login-form input{
+.signup-form input{
     padding: 20px 50px 20px 20px;
     width: 100%;
     height: 100%;
     font-size: 16px;
     background: transparent;
     outline: none;
-
-}
-
-.inputClass{
     border: 3px solid rgba(177, 177, 177, 0.2);
     border-radius: 50px;
-    color: rgb(39, 39, 39);
+    color: white;
 }
 
-.login-form input::placeholder{
-    color: rgba(14, 14, 14, 0.589);
-} 
+.signup-form input::placeholder {
+    color: rgba(255, 255, 255, 0.589);
+}
 
-.login-form i{
+.signup-form i{
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 25px;
 }
+/*------------INPUT FIELDS---------- */
 
-
-/*----REMEMBER AND FORGOT SECTION ----*/
-
-.remember-forgot{
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between; 
-    margin: -15px 0 15px; 
-    color: rgb(65, 65, 65);
+.signup-terms {
+    margin: 30px 0px 20px 0px;
 }
-.remember-forgot label input[type="checkbox"]{
-    accent-color: #00BF62;
+.signup-terms input {
     margin: 0 10px 0 5px;
-    transform: scale(1.2); 
-    /* height: 20px; */
 }
-
-.remember-forgot a{
+.signup-terms a{
     color: white;
     text-decoration: none;
 }
-.remember-forgot a:hover{
-    /* color:#00BF62; */
+.signup-terms a:hover{
     text-decoration: underline;
+    font-weight: 400;
 }
-/*----------------------------------*/
 
-.login-container .btn{
+.signup-btn {
     width: 100%;
     height: 45px;
     border: 3px solid white;
@@ -100,29 +86,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     color: rgb(0, 0, 0);
     font-size: 18px;
-    font-weight: 600;    
+    font-weight: 600;
 }
 
-.login-container .register-link{
-    margin: 20px 0px 15px;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-}
-
-.login-container .register-link a{
-    text-decoration: none;
-    color:white;
-    font-weight: 550;
-}
-
-.login-container .register-link a:hover{
-    text-decoration: underline;
-}
-
-.inputClass:focus{
-    border: 3px solid #ffffff;
-    /* box-shadow: 0 0 15px #00BF62; */
+.neon-border {
+    border: 3px solid #fbfbfb;
+    box-shadow: 0 0 15px #08c5ff;
     border-radius: 30px;
 }
-
