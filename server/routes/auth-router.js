@@ -21,25 +21,18 @@ router.post(`/register`, async(req, res)=>{
 // POST REQUEST : LOG IN 
 router.post(`/login`, async(req, res)=>{
   const {username, password} = req.body;
-
   try{
-
-    console.log("CHECK LOGIN 2")
-
     const user = await User.findOne({username, password})
     if(!user){
       return res.status(401).json({error: "INVALID CREDENTIALS"})
     }
-
-    const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET_KEY);
-    // res.status(200).json({ token });
-    res.status(200).redirect('/')
+    const token = jwt.sign({ userId: user.id, username : user.username }, process.env.JWT_SECRET_KEY);
+    res.status(200).json({ token });
 
   }catch(error){
     console.log("ERROR: ", error);
     res.status(500).json({message: "INTERNAL SERVER ERROR OCCURED", error})
   }
-
 })
 
 export default router;

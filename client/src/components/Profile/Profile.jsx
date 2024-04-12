@@ -2,7 +2,7 @@ import React from 'react'
 import './Profile.css'
 import AchivementTab from './AchivementTab'
 import profileImage from "../../assets/images.png"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const profileName = "Apex User"
@@ -16,7 +16,7 @@ function Profile() {
     // Remove authentication-related items from local storage
     localStorage.removeItem("token");
     localStorage.removeItem("isAuthenticated");
-    navigate("/log_in");
+    window.location.href = "/log_in";
   };
   
 
@@ -58,6 +58,9 @@ function Profile() {
           </div>
         </div>
         <button className='btn' onClick={handleLogout}>Log Out</button> 
+        <Link to="/user/editprofile">
+        <button className='btn' >Edit Profile</button> 
+        </Link>
       </div>
     </div>
   )

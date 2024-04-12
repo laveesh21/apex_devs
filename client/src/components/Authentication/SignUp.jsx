@@ -56,7 +56,7 @@ function SignUp() {
           </div>
 
           <div className="signup-form">
-            <label htmlFor="fullname">FullName:</label>
+            <label htmlFor="fullname">Full Name:</label>
             <input
               type="text"
               className="signup-input"

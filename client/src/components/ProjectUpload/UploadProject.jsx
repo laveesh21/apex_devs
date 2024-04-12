@@ -13,7 +13,7 @@ function UploadProject(props) {
     description: "",
     imagelink: "",
     technologiesUsed: [],
-    date: "" // Add date field
+    date: "" 
   });
 
   // HANDLE CHANGE
@@ -23,33 +23,26 @@ function UploadProject(props) {
 
   const handleImageUrlChange = (url) => {
     setImageUrl(url);
-    setProject({ ...project, imagelink: url }); // Update project state with the image URL
+    setProject({ ...project, imagelink: url });
   };
 
   // FORM SUBMISSION HANDLE
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token")
+    const header = token ? {authorization: `Bearer ${token}`}:{}
 
-    // Get the current date
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleDateString('en-GB');
-    // Update the project object with the current date
-    const updatedProject = {
-      ...project,
-      date: formattedDate
-    };
-
-    // Submit the updated project data
     await axios
-      .post(`${domain}/project/upload`, updatedProject)
+      .post(`${domain}/project/upload`, project, { headers: header })
       .then((response) => {
         console.log("Project added successfully:", response.data);
       })
       .catch((error) => {
-        console.error("Error while adding project:", error);
+        console.error("Error while adding project:=>", error);
       });
   };
   
+
   // TECHNOLOGY HANDLING
   const [techInput, setTechInput] = useState(""); 
 

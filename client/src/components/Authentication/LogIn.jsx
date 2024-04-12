@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./LogIn.css";
 
@@ -7,8 +7,7 @@ function LogIn() {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [myerror, setError] = useState(0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,30 +16,17 @@ function LogIn() {
         username,
         password,
       });
-      console.log("CHECK AUTH")
 
       if (response.status === 200) {
-
-        // Successful login
         const token = response.data.token;
         localStorage.setItem("token", token);
         localStorage.setItem("isAuthenticated", true);
         console.log("LOGGED IN SUCCESSFULLY");
-
-        // Decode and log token
-        // const decodedToken = jwt.decode(token);
-        // console.log("Decoded Token:", decodedToken);
-        
-        navigate("/");
-
-      } else {
-        
-        setError(response.data.message || "Authentication failed");
-        localStorage.setItem("isAuthenticated", false);
-
+        window.location.href = "/";
       }
     } catch (error) {
-      console.error("Error: ", error);
+      setError(1);
+      console.error("ERROR: ", error);
     }
   };
 
@@ -80,8 +66,6 @@ function LogIn() {
               <i className="bx bxs-lock-alt"></i>
             </div>
 
-            {error && <div className="error-message">{error}</div>}
-
             <div className="remember-forgot">
               <label htmlFor="rememberMe">
                 <input type="checkbox" id="rememberMe" />
@@ -97,6 +81,7 @@ function LogIn() {
             <div className="register-link">
               Don't have an account? <Link to="/sign_up">Register</Link>
             </div>
+              {(myerror)?<div style={{textAlign: 'center', color:"red"}}>! Invalid Credentials !</div>:""}
           </form>
         </div>
       </div>

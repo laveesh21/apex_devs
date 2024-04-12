@@ -60,7 +60,7 @@ const projectSchema = new Schema({
     ref: "User",
     // required: true,
   },
-}, {timestamp: true});
+}, {timestamps: true});
 
 const Project = mongoose.model("Project", projectSchema);
 
