@@ -17,17 +17,18 @@ router.get(`/`, async (req, res) => {
 
 // GET REQUEST FOR A SINGLE PROJECT
 router.get(`/:projectId`, (req, res) => {
-  const projectId = req.params.projectId;
-  Project.findOne({ projectId })
+  const _id = req.params.projectId;
+  Project.findOne({ _id })
     .then((data) => {
-      if (data) {
+      if (!data) {
         res.status(404).json({ error: "Project Does Not Exist" });
       }
       res.json(data);
     })
     .catch((error) => {
-      res.status(500).json({ error: `Internal Server Error: ${error}` });
+      res.status(500).json({ error: `NODEJS: Internal Server Error: ${error}` });
     });
+    
 });
 
 //  POST REQUEST : PROJECT UPLOAD

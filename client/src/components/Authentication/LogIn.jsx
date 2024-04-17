@@ -21,7 +21,6 @@ function LogIn() {
         const token = response.data.token;
         localStorage.setItem("token", token);
         localStorage.setItem("isAuthenticated", true);
-        console.log("LOGGED IN SUCCESSFULLY");
         window.location.href = "/";
       }
     } catch (error) {

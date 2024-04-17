@@ -22,13 +22,8 @@ router.post(`/login`, async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username, password });
-    if (!user) {
-      return res.status(401).json({ error: "INVALID CREDENTIALS" });
-    }
-    const token = jwt.sign(
-      { id: user.id, username: user.username },
-      process.env.JWT_SECRET_KEY
-    );
+    if (!user) {return res.status(401).json({ error: "INVALID CREDENTIALS" });}
+    const token = jwt.sign({ id: user.id, username: user.username },process.env.JWT_SECRET_KEY);
     res.status(200).json({ token });
   } catch (error) {
     console.log("ERROR: ", error);
