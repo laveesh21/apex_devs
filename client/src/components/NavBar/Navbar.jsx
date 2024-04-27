@@ -1,24 +1,25 @@
 import React, { useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, UNSAFE_DataRouterStateContext } from 'react-router-dom';
 import { FaRegUserCircle } from "react-icons/fa";
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png';
 import "./Navbar.css";
-
-// const isAuthenticated = localStorage.getItem('isAuthenticated');
-
+import {jwtDecode} from 'jwt-decode';
 
 function Navbar() {
 
   const[isAuthenticated, setAuthentication] = useState(false)
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       setAuthentication(true);
-    } else {
-      setAuthentication(false);
-    }
-  }, [isAuthenticated]);
+      const decodedToken = jwtDecode(token); 
+      setUserId(decodedToken.id);
+    }else{
+        setAuthentication(false);
+      }
+    }, [isAuthenticated, userId]);
 
 
   return (
@@ -39,7 +40,7 @@ function Navbar() {
         <div className='side-tools'>
           {isAuthenticated ? (
             <div className='userIcon'>
-              <Link to="/profile">
+              <Link to={`/profile/${userId}`}>
                 <FaRegUserCircle size={35} />
               </Link>
             </div>

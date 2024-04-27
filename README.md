@@ -24,6 +24,44 @@ It just makes it easy for developers to stay in touch with each other and get a 
   - Profile reputation system for devs which shows their activity level on website
   - Build a strong profile to showcase your skills by getting achivements.
 
+## 
+
+### HomePage
+- Projects cards will be shown in grid form which will contain project brief project details like project owner profile icon , project owner name, project title, ptoject description, tech stack used
+- Search bar to search for projects by matching keyword or tags
+- Left side bar for caregories to filter projects types
+- Upload button to upload projects if logged in
+
+### Project Page
+- Complete details of projects and images for visual representation
+- Likes and dislike options on projects 
+- Comments/Suggestion section for projects
+- Bookmark to save projects 
+- Edit option for project owner
+
+### Community
+- Contains threads
+- Users can see upvote, downvote and comments for the thread
+- Sidebar to filter threads according to options
+- Search Bar to seach threads
+
+### Thread page
+- User can see more details on threads
+- Users can Upvote or downvote threads
+- Comments section for threads 
+- Bookmarks to save threads
+- Edit option for threads owner
+
+### About Page
+- Information about the website 
+- Contact page to send details to website email address
+
+### Profile page 
+- A small navbar to navigate to profile, upload,  Threads, saved
+- Profile card with Fullname , Profilepic, username, bio, External website links like twitter, instagram, github.
+- Popularity system which works according to upvotes and downvotes ratio
+- Achivements tab to keep the track of accomplishments
+
 ## ApexDevs Netlify Link
 
 Link: [Netlify - ApexDevs](https://main--apexdevs.netlify.app)
@@ -34,16 +72,16 @@ Link: [Render - ApexDevs](https://apexdevs-club.onrender.com)
 
 ## Figma Design
 Here is link for figma design: [Figma](https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1)
-<p align="center">
+<!-- <p align="center">
   <img src="client/src/assets/FigmaQR.png" height="150" width="150">
-</p>
+</p> -->
 
 
 ## API Documentation
 Link for API documentation: [Postman API](https://documenter.getpostman.com/view/32332304/2s9YymHQJc)
-<p align="center">
+<!-- <p align="center">
   <img src="client/src/assets/ApiOR.png" height="150" width="150">
-</p>
+</p> -->
 <br>
 
 ## Class test link

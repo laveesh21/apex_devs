@@ -1,34 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import AchivementTab from "./AchivementTab";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-
-import profileImage from "../../assets/images.png";
-const profileName = "Apex User";
-const profileUsername = "apex_user_123";
+import UserImage from '../../assets/images.png'
 
 const Profile = () => {
-
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
-  const [profile, setProfile] = useState(null);
-  const { userId } = useParams();
+  const [profile, setProfile] = useState({});
+  const {userId} = useParams()
+  const userImage = UserImage
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      try{
-        const response = await axios(`${domain}/profile/${userId}`);
-        setProfile(response)
-      }catch(error){
-        res.status(500).json({message:"Internal Server Error"})
+      try {
+        console.log("CHECK")
+        const response = await axios.get(`${domain}/profile/${userId}`);
+        setProfile(response.data);
+      } catch (error) {
+        console.log("EFFECT ERROR")
       }
-    }
-    // fetchUserDetails()
+    };
+    fetchUserDetails();
   }, [userId]);
-
-  if (!profile) {
-    return <div>Loading User Proile...</div>;
-  }
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -41,7 +35,9 @@ const Profile = () => {
       <div className="profile-super-container">
         <div className="profile-card">
           <div className="profile-card-pic">
-            <img src={profileImage} alt="Apex" />
+            <img src={userImage} alt="Apex" />
+            {/* <img src={profile.imagelink} alt="Apex" /> */}
+
           </div>
 
           <div className="profile-card-info">
@@ -55,6 +51,7 @@ const Profile = () => {
               Welcome to my profile, i am a fullstack developer who enjoys
               learning new and cutting edge technology.
             </div>
+            
           </div>
         </div>
 
@@ -72,12 +69,11 @@ const Profile = () => {
         <button className="btn" onClick={handleLogout}>
           Log Out
         </button>
-        <Link to="/user/editprofile">
-          <button className="btn">Edit Profile</button>
-        </Link>
+        <Link to={`edit/`}><button className="btn">Edit</button></Link>
       </div>
     </div>
   );
+
 };
 
 export default Profile;

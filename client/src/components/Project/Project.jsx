@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Project.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import ReviewTab from '../microComponent/ReviewTab'
 
 const description =
   "Welcome to FlutterFlix, your ultimate destination for streaming the latest and greatest movies and TV shows right from your Flutter-powered device! Immerse yourself in a world of entertainment with our Netflix-inspired app, designed and developed using the power of Flutter.";
 const projectTitle = "Netflix Clone by using flutter";
 const projectRating = "89%";
 const projectDev = "Apex User";
-const projectDate = "24-5-2024";
-const projectTechList = ["Dart", "HTML", "Java", "ReactJS", "Dart"];
 
 function Project() {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
@@ -47,7 +44,7 @@ function Project() {
             <img src={project.imagelink} alt="Project img" />
           </div>
           <div className="project-info">
-            <p>{description}</p>
+            <p>{project.description}</p>
             <div className="project-rating project-info-title">
               All Reviews: <h6>{projectRating}</h6>
             </div>

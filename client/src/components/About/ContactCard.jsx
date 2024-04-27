@@ -9,7 +9,7 @@ function ContactCard() {
                     <div className="contact-left">
                         <h1>Contact</h1>
                         <p><i className='bx bxl-gmail'></i>knoxsiege@gmail.com</p>
-                        <p><i className='bx bxs-phone' ></i>7017546270</p>
+                        <p><i className='bx bxs-phone' ></i>0001110001</p>
                         <div className="social-icon">
                             <a href="#"><i className='bx bxl-facebook-circle'></i></a>
                             <a href="#"><i className='bx bxl-linkedin-square'></i></a>
