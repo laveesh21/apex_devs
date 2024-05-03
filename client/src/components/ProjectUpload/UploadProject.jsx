@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./UploadProject.css";
 import CloudinaryImage from "./ImageUpload";
+import { useNavigate } from 'react-router-dom';
+
 
 function UploadProject(props) {
   const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
+
 
   // PROJECT state
   const [project, setProject] = useState({
@@ -36,6 +40,7 @@ function UploadProject(props) {
       .post(`${domain}/project/upload`, project, { headers: header })
       .then((response) => {
         console.log("Project added successfully:", response.data);
+        navigate('/');
       })
       .catch((error) => {
         console.error("Error while adding project:=>", error);

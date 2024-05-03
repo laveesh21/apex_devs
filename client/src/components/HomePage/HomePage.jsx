@@ -14,7 +14,10 @@ function HomePage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+
     axios.get(`${domain}/project`).then((res) => {
+
+      
       console.log(res);
       if (res.status == 201) {
         setProject(res.data);
