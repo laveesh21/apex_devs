@@ -1,3 +1,7 @@
+<strong><span style="color:red;">This project is deprecated. Visit new website via link below</span></strong>
+
+[ApexDevs New Version](https://github.com/laveesh21/ApexDevs)
+
 <p align="center">
   <img src="client/src/assets/ApexDevs_Logo_Temp.png" height="250" width="280">
 </p>
